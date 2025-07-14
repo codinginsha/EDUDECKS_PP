@@ -1,111 +1,160 @@
-# EduDECKS - AI PowerPoint Presentation Generator
+# 🎓 EduDECKS - AI PowerPoint Generator
 
-An intelligent PowerPoint presentation generator that creates educational slides with AI-generated content, images, and videos.
+An intelligent web application that generates beautiful educational PowerPoint presentations using AI. Create engaging presentations for any subject, grade level, and language with just a few clicks!
 
-## Features
+## ✨ Features
 
-- 🤖 AI-powered content generation using Google Gemini
-- 🎨 Automatic background images from Unsplash
-- 🎥 YouTube video integration (now links to search results for the topic and grade)
-- 🌏 Multi-language support (English, Hindi, Marathi, Urdu)
-- ↔️ RTL/LTR layout: Urdu and other RTL languages have flipped text/image layout and correct alignment
-- 🧮 Math/numerical topics: Slides include formulas and worked examples with proper Unicode math formatting (e.g., x², π, √, fractions, etc.) in any language
-- 📝 Urdu slides: Bullet points are not numbered (for natural Urdu style)
-- 🖋️ Improved title cleaning and formatting for all languages (no stray English or symbols in Urdu)
-- 📚 Language subjects (English, Hindi, Urdu, Marathi): If the topic is a poem or lesson, a "Difficult Words and Meanings" slide is included
-- 🖼️ Dynamic layouts and font scaling for visually engaging slides
-- 🆕 Each run generates a unique PowerPoint file (timestamped)
+- **🤖 AI-Powered Content**: Generate presentation content using Google's Gemini AI
+- **🌍 Multi-Language Support**: English, Hindi, Urdu, and Marathi
+- **📚 Subject Versatility**: Works with any academic subject
+- **🎨 Beautiful Templates**: Professional slide designs and layouts
+- **📝 Practice Questions**: Automatically includes interactive exercises
+- **💾 Instant Download**: Get your presentation as a PowerPoint file
+- **🌐 Web Interface**: Easy-to-use Streamlit web application
 
-## Setup Instructions
+## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.7 or higher
-- pip (Python package installer)
+### Local Development
 
-### Installation
-
-1. **Option 1: Automatic Setup (Windows)**
-   ```
-   Double-click setup.bat
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/codinginsha/EDUDECKS_PP.git
+   cd EDUDECKS_PP
    ```
 
-2. **Option 2: Manual Setup**
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
+3. **Set up API keys** (optional - already configured)
+   ```bash
+   # Add your API keys to streamlit_app.py if needed
+   GENAI_API_KEY = "your_gemini_api_key"
+   UNSPLASH_ACCESS_KEY_1 = "your_unsplash_api_key"
+   YOUTUBE_API_KEY = "your_youtube_api_key"
+   ```
+
+4. **Run the application**
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:8501`
+
+### Streamlit Cloud Deployment
+
+1. **Fork this repository** on GitHub
+2. **Sign up** for [Streamlit Cloud](https://streamlit.io/cloud)
+3. **Connect your GitHub account**
+4. **Deploy** by selecting this repository
+5. **Set the main file path** to `streamlit_app.py`
+
+## 📖 How to Use
+
+1. **Enter Presentation Details**:
+   - Grade Level (1-12)
+   - Subject (e.g., Science, Math, English)
+   - Topic (e.g., Photosynthesis, Algebra, Grammar)
+   - Language (English, Hindi, Urdu, Marathi)
+   - Number of Slides (3-10)
+
+2. **Generate Presentation**:
+   - Click "Generate Presentation"
+   - Wait for AI to create content
+   - Download your PowerPoint file
+
+3. **Customize** (optional):
+   - Edit the downloaded file in PowerPoint
+   - Add your own images and content
+   - Modify formatting as needed
+
+## 🛠️ Technical Details
+
+### Dependencies
+
+- **Streamlit**: Web application framework
+- **Google Generative AI**: Content generation
+- **python-pptx**: PowerPoint file creation
+- **googletrans**: Language translation
+- **requests**: API calls
+- **Pillow**: Image processing
+
+### File Structure
+
+```
+EDUDECKS_PP/
+├── streamlit_app.py      # Main Streamlit application
+├── ppt_1.py             # Original command-line version
+├── requirements.txt     # Python dependencies
+├── README.md           # This file
+├── .gitignore          # Git ignore rules
+└── ppt templates/      # Background templates (local only)
+```
+
 ### API Keys Required
 
-The program uses several APIs. You'll need to update the API keys in `ppt.py`:
+- **Google Generative AI**: For content generation
+- **Unsplash**: For background images (optional)
+- **YouTube**: For video links (optional)
 
-- **Google Gemini API**: Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
-- **Unsplash API**: Get from [Unsplash Developers](https://unsplash.com/developers)
-- **YouTube API**: Get from [Google Cloud Console](https://console.cloud.google.com/)
+## 🌟 Features in Detail
 
-## How to Run
+### AI Content Generation
+- Creates age-appropriate content
+- Includes relevant examples and facts
+- Generates practice questions
+- Supports mathematical formulas and equations
 
-```bash
-python ppt.py
-```
+### Multi-Language Support
+- **English**: Full support with modern fonts
+- **Hindi**: Devanagari script support
+- **Urdu**: Right-to-left text layout
+- **Marathi**: Devanagari script support
 
-## Usage
+### Presentation Features
+- Professional slide layouts
+- Automatic font sizing
+- Color-coded backgrounds
+- Bullet point formatting
+- Title and content slides
+- Practice question slides
 
-1. Run the program
-2. Enter the grade level (e.g., 5)
-3. Enter the subject (e.g., Science, Math, History)
-4. Enter the topic (e.g., Photosynthesis, Fractions, Ancient Egypt)
-5. Choose language (English, Hindi, Marathi, Urdu)
-6. Specify number of slides (3-10)
+## 🤝 Contributing
 
-The program will generate a PowerPoint presentation with:
-- AI-generated content
-- Relevant background images
-- YouTube search links for the topic and grade
-- Professional formatting
-- Slide transitions
-- Unicode math formulas and worked examples for math/numerical topics
-- RTL/LTR layout and correct bullet formatting for all languages
-- "Difficult Words and Meanings" slide for language subjects (poem/lesson)
-- Dynamic layouts and font scaling for consistent, engaging slides
-- Unique output file for every run
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Output
+## 📝 License
 
-The generated presentation will be saved as:
-`Class{grade}_{subject}_{topic}_presentation_{timestamp}.pptx`
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Troubleshooting
+## 🙏 Acknowledgments
 
-- **Import errors**: Make sure all dependencies are installed using `pip install -r requirements.txt`
-- **API errors**: Verify your API keys are correct and have sufficient credits
-- **PowerPoint transitions**: Requires Microsoft PowerPoint to be installed for transition effects
-- **Non-English fonts**: For best results in Urdu, Hindi, or Marathi, ensure you have Unicode fonts installed (e.g., Jameel Noori Nastaleeq for Urdu)
-- **PermissionError when saving PPTX**: Make sure the file is not open in PowerPoint or any other app. Each run now generates a unique file, so this should not occur unless the folder is locked.
+- Google Generative AI for content generation
+- Streamlit for the web framework
+- Unsplash for background images
+- The open-source community for various libraries
 
-## Dependencies
+## 📞 Support
 
-- google-generativeai: AI content generation
-- python-pptx: PowerPoint creation
-- opencv-python: Image processing
-- Pillow: Image handling
-- googletrans: Translation services
-- google-api-python-client: YouTube API
-- comtypes: PowerPoint automation
-- numpy: Numerical operations
+If you encounter any issues or have questions:
 
-Your dependencies are now being installed in the background. Once that's done, you can run the program with:
+1. Check the [Issues](https://github.com/codinginsha/EDUDECKS_PP/issues) page
+2. Create a new issue with detailed information
+3. Contact the maintainers
 
-```bash
-python ppt.py
-```
+## 🔄 Updates
 
-**What to do next:**
-1. Wait for the installation to finish (watch for any errors).
-2. Open a Command Prompt in your project folder.
-3. Run:  
-   ```
-   python ppt.py
-   ```
-4. Follow the prompts to generate your presentation.
+Stay updated with the latest features and improvements by:
+- Starring this repository
+- Watching for updates
+- Following the project
 
-If you see any errors during installation or when running the script, let me know and I’ll help you troubleshoot! 
+---
+
+**Made with ❤️ for educators and students worldwide** 

@@ -1,0 +1,12 @@
+# Requirements for EduDECKS AI PowerPoint Generator
+# Install with: pip install -r requirements.txt
+
+google-generativeai>=0.8.0
+requests>=2.31.0
+python-pptx>=0.6.20
+googletrans>=4.0.0rc1
+google-api-python-client>=2.100.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+comtypes>=1.2.0
+numpy>=1.21.0 
